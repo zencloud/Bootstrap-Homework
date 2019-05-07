@@ -1,0 +1,185 @@
+/* Custom Div Styles */
+
+/* Variables */
+:root {
+    --linkColor:       #8d5c8d;
+    --themeColor:      #800080;
+    --headerTextColor: #64298b;
+    --siteWidth:         70%;
+}
+
+/* Elements */
+body, html {
+    background-image: url("../IMGS/background-main.png");
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    width: 100%;
+    padding: 0px;
+}
+
+h1 {
+    color: var(--headerTextColor);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 100;
+    font-size: 28px;
+    margin-bottom: -10px;
+}
+
+hr {
+    padding: 0px;
+}
+.mainWrapper {
+
+}
+
+.siteLogoAnimation {
+    font-weight: bold;
+    display: inline-block;
+    -webkit-animation: siteLogoAnimation 0.6s ease-in-out 1s both;
+	        animation: siteLogoAnimation 0.6s ease-in-out 1s both;
+}
+
+.navContainer {
+    border-bottom: 3px solid var(--themeColor);
+    background-color: white;
+}
+
+.navHeader {
+    height: 60px;
+    width: var(--siteWidth);
+    margin: 0 auto;
+}
+
+.navNameCell {
+    background-color: var(--themeColor);
+    height: 100%;
+    width: 100;
+    text-align: center;
+    line-height: 60px;
+    font-weight: 100;
+    font-size: 20px;
+    color: white;
+}
+
+.navLinkCell {
+    height: 100%;
+    font-size: 1.05em;
+    font-weight: 500;
+    line-height: 60px;
+    padding: 0px;
+}
+
+/* Navigation Styling */
+li > a, li > a:hover {
+    padding: 0px;
+    color: var(--linkColor);
+    font-family: Verdana, sans-serif;
+}
+
+li > a:hover::before {
+    content: "• ";
+    text-decoration: none;
+}
+
+/*  Nav Dividers */
+.nav li:not(:first-child):before {
+    content: " | ";
+    font-family: Helvetica, sans-serif;
+    font-weight: 100;
+    color: rgb(199, 149, 191);
+    opacity: 0.5;
+    padding: 0px 8px 0px 10px;
+}
+
+.contentContainer {
+    width: var(--siteWidth);
+    margin: 0 auto;
+    margin-top: 10px;
+    background-color: #ffffff;
+    padding: 10px;
+    border: 2px solid var(--themeColor);
+}
+
+.contentBody {
+    font-size: 1.2em;
+    line-height: 34px;
+}
+
+/* Profile Image on About Me Page: Fades in */
+.imgProfile {
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 1px;
+    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 1s; /* Firefox < 16 */
+        -ms-animation: fadein 1s; /* Internet Explorer */
+         -o-animation: fadein 1s; /* Opera < 12.1 */
+            animation: fadein 1s;
+}
+
+/* Animation Trigger on page focus */
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-webkit-keyframes siteLogoAnimation {
+   0% {
+     -webkit-transform: rotate(0);
+             transform: rotate(0);
+   }
+   100% {
+     -webkit-transform: rotate(360deg);
+             transform: rotate(360deg);
+   }
+}
+  
+@keyframes siteLogoAnimation {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+}
+
+/* Media Query*/
+@media screen and (max-width: 900px) {
+    
+    :root {
+        --siteWidth: 90%;
+    }
+}
+
+/* Media Query*/
+@media screen and (max-width: 720px) {
+    
+    /* Image Profile Rescale */
+    .imgProfile {
+        width: 90px;
+        height: 90px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+}
+
+/* Media Query*/
+@media screen and (max-width: 576px) {
+    
+    .navHeader {
+        width: 100%;
+    }
+
+    .navContainer {
+        padding: 0px;
+        height: 50px;
+    }
+
+    .navNameCell {
+        font-size: 40px;
+    }
+}
